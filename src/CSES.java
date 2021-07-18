@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class Codeforces {
+public class CSES {
 
     static class FastScanner {
         BufferedReader br;
@@ -56,24 +56,16 @@ public class Codeforces {
     private static BufferedWriter output = new BufferedWriter(new OutputStreamWriter(System.out));
     private static final int iInf = Integer.MAX_VALUE - (int) (1e6);
     private static final long lInf = Long.MAX_VALUE - (long) (1e6);
+    private static int[] phi;
 
-    /** Optimal(Maximum,Minimum) Answers
-     * 1. Binary search
-     * 2. Prefix Suffix
-     * 3. Greedy (sorting searching)
-     * 4. DP
-     **/
     public static void solve(int T) throws IOException {
 
     }
     public static void main(String[] args) throws IOException {
         int t = 1;
-//        t = fs.nextInt();
-        while (t-- > 0){
+//        t = Integer.parseInt(br.readLine());
+        while (t-- > 0) {
             solve(t);
         }
-        System.gc();
     }
 }
-
-

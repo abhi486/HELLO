@@ -10,7 +10,7 @@ public class Practice {
     private static final long MOD = (long) (1e9 + 7);
     private static PrintWriter out = new PrintWriter(System.out);
 
-    public static void permute(String s, String str, List<String> ans){
+    public static void permute(String s, String str, List<String> ans) {
         if (s.length()==0){
             ans.add(str);
             return;
@@ -24,16 +24,7 @@ public class Practice {
         }
     }
 
-    public static class Pair<K,V>{
-        K a;
-        V b;
-        Pair(K a,V b){
-            this.a = a;
-            this.b = b;
-        }
-    }
-
-    public static int findSS(int[] a,int n){
+    public static int findSS(int[] a,int n) {
        Map<Integer,Integer> mp = new HashMap<>();
        int ans = 0;
        int currsum = 0;
@@ -51,7 +42,7 @@ public class Practice {
     }
 
 
-    public static void merge(int[] a,int l,int r,int mid){
+    public static void merge(int[] a,int l,int r,int mid) {
         ArrayList<Integer> left = new ArrayList<>();
         ArrayList<Integer> right = new ArrayList<>();
         for (int i = l;i <= mid;i++){
@@ -76,7 +67,7 @@ public class Practice {
             a[k++] = right.get(j++);
         }
     }
-    public static void mergeSort(int[] a,int l,int r){
+    public static void mergeSort(int[] a,int l,int r) {
         if (l < r){
             int mid = l + (r - l)/2;
 

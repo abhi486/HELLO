@@ -10,7 +10,7 @@ public class CompilerDesignLab {
     static String multiCommentStart = "/*";
     static String multiCommentStop = "*/";
 
-    public static String toLower(String s){
+    public static String toLower(String s) {
         StringBuilder ans = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
             ans.append(Character.toLowerCase(s.charAt(i)));
@@ -65,7 +65,7 @@ public class CompilerDesignLab {
         System.out.println();
     }
 
-    public static void program2(){
+    public static void program2() {
         String s = sc.next();
         s = toLower(s);
         int n = s.length();
@@ -96,7 +96,6 @@ public class CompilerDesignLab {
         System.out.println("Single Comments: " + single);
         System.out.println("Multiple Comments: " + multiple);
     }
-
 
     public static boolean isAValidComment(String str) {
         if (str.length() < 2) {
@@ -154,23 +153,25 @@ public class CompilerDesignLab {
 
     public static String getOperator(String symbol) {
         String temp = "";
-        if (symbol.equals("+")){
-            temp = "Addition";
-        }
-        else if (symbol.equals("-")){
-            temp = "Subtraction";
-        }
-        else if (symbol.equals("*")){
-            temp = "Multiplication";
-        }
-        else if (symbol.equals("/")){
-            temp = "Division";
-        }
-        else if (symbol.equals("%")){
-            temp = "Mod";
-        }
-        else if (symbol.equals("=")){
-            temp = "Assignment";
+        switch (symbol) {
+            case "+":
+                temp = "Addition";
+                break;
+            case "-":
+                temp = "Subtraction";
+                break;
+            case "*":
+                temp = "Multiplication";
+                break;
+            case "/":
+                temp = "Division";
+                break;
+            case "%":
+                temp = "Mod";
+                break;
+            case "=":
+                temp = "Assignment";
+                break;
         }
         return temp.equals("") ? temp : temp + " operator";
     }
@@ -216,20 +217,6 @@ void123
         }
     }
 
-    public static class Pair<T1,T2>{
-        T1 first;
-        T2 second;
-        Pair(T1 a,T2 b){
-            this.first = a;
-            this.second = b;
-        }
-
-        @Override
-        public String toString() {
-            return "[" + first + ", " + second + "]";
-        }
-    }
-
     public static class Program5 {
         //3 2
 
@@ -237,6 +224,7 @@ void123
 [0,1] [0]
 [null] [2]
 [null] [null]
+
         */
 
         /*
@@ -268,22 +256,22 @@ void123
                 String[] statesInCurrState = state.substring(1,state.length()-1).trim().split(",");
                 for (int i = 0; i < m; i++){
                     ArrayList<String> newState = new ArrayList<>();
-                    for (int j = 0; j < statesInCurrState.length; j++) {
+                    for (String item : statesInCurrState) {
                         //System.out.println(statesInCurrState[j]);
-                        String s = statesInCurrState[j].trim();
-                        if (s.equals("null")){
+                        String s = item.trim();
+                        if (s.equals("null")) {
                             continue;
                         }
                         String t = nfaTable[Integer.parseInt(s)][i];
-                        String[] temp = t.substring(1,t.length()-1).split(",");
-                        for (int k=0;k<temp.length;k++){
+                        String[] temp = t.substring(1, t.length() - 1).split(",");
+                        for (String value : temp) {
                             //System.out.println("#" + c +  " " + temp[k]);
-                            if (temp[k].equals("null")){
+                            if (value.equals("null")) {
                                 continue;
                             }
-                            if (newState.contains(temp[k]))
+                            if (newState.contains(value))
                                 continue;
-                            newState.add(temp[k]);
+                            newState.add(value);
                             //System.out.println("newState : " + newState.toString());
                         }
                     }
@@ -326,7 +314,7 @@ void123
             File file = new File("input.txt");
             List<String> tokens = new ArrayList<>();
             Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()){
+            while (scanner.hasNextLine()) {
                 String s = scanner.nextLine();
                 StringBuilder temp = new StringBuilder();
                 for (int i=0;i<s.length();i++){
@@ -350,7 +338,7 @@ void123
                 if (isValidKeyWord(x)){
                     System.out.print("(keyword)");
                 }
-                else if (isAValidIdentifier(x)){
+                else if (isAValidIdentifier(x)) {
                     System.out.print("(Identifier)");
                 }
                 else if (!getOperator(x).equals("")){

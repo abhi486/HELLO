@@ -22,7 +22,7 @@ public class TrieDataStructure {
             }
             temp.isEnd = true;
         }
-        public boolean search(String s){
+        public boolean search(String s) {
             TrieNode temp = root;
             for (int i = 0; i < s.length(); i++) {
                 if (temp.children[s.charAt(i)-'a'] == null)

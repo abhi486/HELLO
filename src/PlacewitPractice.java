@@ -56,7 +56,6 @@ public class PlacewitPractice{
             System.out.println("Match at : " + x);
         }
     }
-
     public static int[] gcd(int a,int b){
         if (b == 0){
             return new int[]{a,1,0};
